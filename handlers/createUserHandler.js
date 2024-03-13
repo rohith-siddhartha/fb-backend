@@ -1,4 +1,5 @@
 import User from "../data-model/UserModel.js";
+import { isValidMobileNumber, isValidName } from "../utils/validations.js";
 
 export function createUserHandler(req, res) {
 
@@ -47,13 +48,4 @@ export function createUserHandler(req, res) {
             });
         });
 
-}
-
-function isValidMobileNumber(mobileNumber) {
-    const mobileRegex = /^[0-9]{10}$/;
-    return typeof mobileNumber === 'string' && mobileRegex.test(mobileNumber);
-}
-
-function isValidName(name) {
-    return typeof name === 'string' && name.trim().length > 0;
 }
