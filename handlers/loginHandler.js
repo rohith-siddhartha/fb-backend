@@ -25,8 +25,8 @@ function loginHandler(req, res) {
             }
         });
     
-        
-    
+        res.cookie('AuthToken', token, { maxAge: 7 * 24 * 60 * 60 * 1000, });
+
         res.send({
             message:"login successful",
             userDetails:{
