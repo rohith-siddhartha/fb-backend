@@ -25,12 +25,14 @@ function loginHandler(req, res) {
             }
         });
     
-        res.cookie("token",token, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true });
+        
     
-        res.send({message:"login successful",userDetails:{
-            id:user._id,
-            mobile:user.mobile,
-            name:user.name
+        res.send({
+            message:"login successful",
+            userDetails:{
+                 id:user._id,
+                 mobile:user.mobile,
+                 name:user.name
         }});
     })
     .catch(error => {
